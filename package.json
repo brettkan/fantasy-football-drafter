@@ -1,0 +1,16 @@
+{
+  "name": "fantasy-football-drafter",
+  "version": "0.0.1",
+  "description": "fantasy football mock draft application",
+  "main": "FFDrafter.js",
+  "repository": "",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon --ignore node_modules shortly.js",
+    "test": "node shortly.js& ./node_modules/.bin/mocha --bail --reporter nyan test/ServerSpec.js; pkill -n node;"
+  },
+  "dependencies": {
+    "sqlite3": "~3.0.8"
+  }
+}
