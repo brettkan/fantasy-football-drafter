@@ -1,0 +1,23 @@
+<div ng-controller="AllPlayerListController">
+  <h3>Draftable Players</h3>
+
+<!--   <div class='search'>
+    <form>
+      <input type="text" name="query" ng-model="search">
+    </form>
+  </div> -->
+
+  <div class='all-players' ng-repeat='player in data.players'>
+    <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+    <div class='title'>{{ link.title }}</div>
+    <div class='original'>{{ link.url }}</div>
+    <a href='/{{link.code}}'>{{ link.base_url }}/{{ link.code }}</a>
+  </div>  
+
+  <div class='info'>
+    <div class='visits'><span class='count'>{{ link.data.visits }}</span>Visits</div>
+    <div class='title'>{{ link.data.title }}</div>
+    <div class='original'>{{ link.data.url }}</div>
+    <a href='/{{link.code}}'>{{ link.data.base_url }}/{{ link.data.code }}</a>
+  </div>
+</div>

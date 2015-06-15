@@ -1,0 +1,36 @@
+<div id='container' ng-controller="LinksController">
+  <!-- Your html here -->
+  <!-- <h1> {{ init() }} </h1> -->
+  <div class='navigation'>
+    <ul>
+      <li><a ui-sref='links' class='index'>All Links</a></li>
+      <li><a ui-sref='shorten' class='create'>Shorten</a></li>
+      <li id='rightFloatList'><a href='#/logout' class='logout'>Log Out</a></li>
+    </ul>
+  </div>
+
+  <div class='search'>
+    <form>
+      <input type="text" name="query" ng-model="search">
+    </form>
+
+  </div>
+
+
+
+  <div class='info' ng-repeat='link in data.links | orderBy: "visits" : "reverse" | filter: { url: search } '>
+    <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+    <div class='title'>{{ link.title }}</div>
+    <div class='original'>{{ link.url }}</div>
+    <a href='/{{link.code}}'>{{ link.base_url }}/{{ link.code }}</a>
+  </div>
+
+
+  <div ng-if="bool" class="fade">
+     Fade me in out
+  </div>
+  <button ng-click="bool=true">Fade In!</button>
+  <button ng-click="bool=false">Fade Out!</button>
+
+
+</div>

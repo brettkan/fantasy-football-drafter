@@ -1,0 +1,23 @@
+<div id='container' ng-controller="ShortenController">
+  <div class='navigation'>
+    <ul>
+      <li><a ui-sref='links' class='index'>All Links</a></li>
+      <li><a ui-sref='shorten' class='create'>Shorten</a></li>
+      <li id='rightFloatList'><a href='/logout' class='logout'>Log Out</a></li>
+    </ul>
+  </div>
+
+  <form name="myForm">
+      <input class='text' type='url' name='input' ng-model='targetUrl' required>
+      <input type='submit' value='Shorten' ng-click='addLink(targetUrl)' ui-sref="shorten.showlink">
+      <div role='alert'>
+        <span class="error" ng-show="myForm.input.$error.required"> Required! </span>
+        <span class="error" ng-show="myForm.input.$error.url"> Not URL </span>
+      </div>
+  </form>
+<!--   <img class='spinner' src='/spiffygif_46x46.gif'>
+ -->  <!-- <div class='message'></div> -->
+
+ <div ui-view></div>
+
+

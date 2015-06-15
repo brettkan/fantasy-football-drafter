@@ -21,7 +21,7 @@ var app = express();
 // app.use(bodyParser.json());
 // // Parse forms (signup/login)
 // app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client'));
 
 // app.use(session({
 //   secret: 'keyboard cat',

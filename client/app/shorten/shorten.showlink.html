@@ -1,0 +1,10 @@
+<div ng-controller="ShortenController">
+<h3>Shorten link added</h3>
+
+  <div class='info'>
+   <div class='visits'><span class='count'>{{ link.data.visits }}</span>Visits</div>
+   <div class='title'>{{ link.data.title }}</div>
+   <div class='original'>{{ link.data.url }}</div>
+   <a href='/{{link.code}}'>{{ link.data.base_url }}/{{ link.data.code }}</a>
+ </div>
+</div>
