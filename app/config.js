@@ -7,51 +7,32 @@ var db = Bookshelf.initialize({
     host: '127.0.0.1',
     user: 'your_database_user',
     password: 'password',
-    database: 'shortlydb',
+    database: 'FFDrafter',
     charset: 'utf8',
-    filename: path.join(__dirname, '../db/shortly.sqlite')
+    filename: path.join(__dirname, '../db/FFDrafter.sqlite')
   }
 });
-
-db.knex.schema.hasTable('urls').then(function(exists) {
-  if (!exists) {
-    db.knex.schema.createTable('urls', function (link) {
-      link.increments('id').primary();
-      link.string('url', 255);
-      link.string('base_url', 255);
-      link.string('code', 100);
-      link.string('title', 255);
-      link.integer('visits');
-      link.timestamps();
-    }).then(function (table) {
-      console.log('Created Table', table);
-    });
-  }
-});
-
-db.knex.schema.hasTable('clicks').then(function(exists) {
-  if (!exists) {
-    db.knex.schema.createTable('clicks', function (click) {
-      click.increments('id').primary();
-      click.integer('link_id');
-      click.timestamps();
-    }).then(function (table) {
-      console.log('Created Table', table);
-    });
-  }
-});
-
-/************************************************************/
-// Add additional schema definitions below
-/************************************************************/
 
 db.knex.schema.hasTable('users').then(function(exists) {
   if (!exists) {
     db.knex.schema.createTable('users', function (user) {
       user.increments('id').primary();
-      user.string('username', 100).unique();
-      user.string('password', 100);
+      user.string('username', 30);
       user.timestamps();
+    }).then(function (table) {
+      console.log('Created Table', table);
+    });
+  }
+});
+
+db.knex.schema.hasTable('players').then(function(exists) {
+  if (!exists) {
+    db.knex.schema.createTable('players', function (player) {
+      player.increments('id').primary();
+      player.string('first_name', 30);
+      player.string('last_name', 30);
+      player.string('position', 30);
+      player.string('team', 30);      
     }).then(function (table) {
       console.log('Created Table', table);
     });
