@@ -1,4 +1,4 @@
-# Project Name #
+# Fantasy Football Draft Simulator #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -19,26 +19,42 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Fantasy Football Draft Simulator
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Quickly and easily participate in a fantasy football draft with your friends, or practice your drafting skills in our mock draft simulator.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  Our app provides a quick and easy way to set up your draft room and get your league up and running in minutes.  We provide a simple interface that allows users to queue up and draft players, as well as quickly see players who have already been drafted by other teams.  Our app allows for users to do an official draft with their league mates, as well as participate in mock drafts in order to practice for the real thing.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Most fantasy football drafting applications are overly bloated. This product gives users a simple interface which can be set up very quickly.  Additionally, this app gives league commissioners additional control over the draft, and allows commissioners to pause the draft and change drafted players. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  This will be a single page app which shows a grid of all drafted players, sorted by team and by round.  The interface will include a simple list and simple queue, with limited details to keep interface thin. 
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  This app makes it simple for fantasy football players to get involved in drafts or quickly participate in mock drafts.  Our simple interface will appeal to players who want to participate in a quick mock draft or easily get their league draft started.
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Making a fantasy football draft as simple as visiting our page and providing a room key.  No login or signup required. 
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+
+  Other fantasy football sites take too long to load and crash often. This just works.
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
