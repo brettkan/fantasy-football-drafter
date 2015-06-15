@@ -42,4 +42,17 @@ db.knex.schema.hasTable('players').then(function(exists) {
   }
 });
 
+db.knex.schema.hasTable('players_users').then(function(exists) {
+  if (!exists) {
+    db.knex.schema.createTable('players_users', function (player_user) {
+      player_user.integer('user_id').references('users.id');
+      player_user.integer('player_id').references('players.id');
+      player_user.integer('round');
+      player_user.timestamps();      
+    }).then(function (table) {
+      console.log('Created Table', table);
+    });
+  }
+});
+
 module.exports = db;

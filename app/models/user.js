@@ -5,7 +5,7 @@ var User = db.Model.extend({
   tableName: 'users',
   hasTimestamps: true,
   player: function() {
-    return this.hasMany(Player);
+    return this.belongsToMany(Player);
   }
 });
 
