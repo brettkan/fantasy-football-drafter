@@ -1,7 +1,8 @@
 var Bookshelf = require('bookshelf');
+var knex = require('knex');
 var path = require('path');
 
-var db = Bookshelf.initialize({
+var knex = require('knex')({
   client: 'sqlite3',
   connection: {
     host: '127.0.0.1',
@@ -12,6 +13,8 @@ var db = Bookshelf.initialize({
     filename: path.join(__dirname, '../db/FFDrafter.sqlite')
   }
 });
+
+var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('users').then(function(exists) {
   if (!exists) {

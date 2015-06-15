@@ -9,4 +9,4 @@ var Player = db.Model.extend({
   }
 });
 
-module.exports = Click;
+module.exports = Player;
