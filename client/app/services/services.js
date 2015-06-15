@@ -1,43 +1,56 @@
 angular.module('FFDrafter.services', [])
 
-.factory('Links', function ($http) {
-  var getLinks = function() {
+.factory('Players', function($http) {
+  var getPlayerList = function() {
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url: 'http://www.fantasyfootballnerd.com/service/players/xml/test/QB/'
     })
-    .then(function (resp) {
+    .then(function(resp) {
+      console.log(resp.data);
       return resp.data;
     });
-  };
-
-  var shortenUrl = function(url) {
-    return $http({
-      method: 'POST',
-      url: '/api/links',
-      data: { url: url }
-    })
-    .then(function (resp) {
-      return resp.data;
-    });
-  };
-
-  var redirectUrl = function(code) {
-    return $http({
-      method: 'GET',
-      url: '/api/links/' + code,
-    })
-    .then(function (resp) {
-      return resp.data;
-    });
-  };
-
-  return {
-    getLinks: getLinks,
-    shortenUrl: shortenUrl,
-    redirectUrl: redirectUrl
   };
 })
+
+// .factory('Links', function ($http) {
+//   var getLinks = function() {
+//     return $http({
+//       method: 'GET',
+//       url: '/api/links'
+//     })
+//     .then(function (resp) {
+//       return resp.data;
+//     });
+//   };
+
+//   var shortenUrl = function(url) {
+//     return $http({
+//       method: 'POST',
+//       url: '/api/links',
+//       data: { url: url }
+//     })
+//     .then(function (resp) {
+//       return resp.data;
+//     });
+//   };
+
+//   var redirectUrl = function(code) {
+//     return $http({
+//       method: 'GET',
+//       url: '/api/links/' + code,
+//     })
+//     .then(function (resp) {
+//       return resp.data;
+//     });
+//   };
+
+//   return {
+//     getLinks: getLinks,
+//     shortenUrl: shortenUrl,
+//     redirectUrl: redirectUrl
+//   };
+// })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
