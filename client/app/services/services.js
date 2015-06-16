@@ -4,7 +4,7 @@ angular.module('FFDrafter.services', [])
   var getPlayerList = function() {
     return $http({
       method: 'GET',
-      url: 'http://www.fantasyfootballnerd.com/service/players/xml/test/QB/'
+      url: '/getPlayers'
     })
     .then(function(resp) {
       console.log(resp.data);
@@ -15,7 +15,7 @@ angular.module('FFDrafter.services', [])
   return {
     getPlayerList: getPlayerList
   };
-  
+
 });
 
 // .factory('Links', function ($http) {

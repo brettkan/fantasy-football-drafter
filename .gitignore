@@ -35,3 +35,6 @@ client/lib/
 .floobit
 .floo
 .flooignore
+
+# Keys
+env/config.js

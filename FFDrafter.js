@@ -2,6 +2,7 @@ var express = require('express');
 // var util = require('./lib/utility');
 // var partials = require('express-partials');
 // var bodyParser = require('body-parser');
+var request = require('request');
 var session = require('express-session');
 
 var db = require('./app/config');
@@ -9,6 +10,7 @@ var Users = require('./app/collections/users');
 var User = require('./app/models/user');
 var Players = require('./app/collections/players');
 var Player = require('./app/models/player');
+var env = require('./env/config');
 
 var app = express();
 
@@ -31,6 +33,17 @@ app.use(express.static(__dirname + '/client'));
 // }));
 
 
+
+app.get('/getPlayers', function(req, res) {
+  request('http://www.fantasyfootballnerd.com/service/players/json/' + env.keys.FFNerd + '/QB/', function(err, APIResp, body) {
+    if (err) { 
+      console.log('Error with API request: ', err); 
+      res.send(400);
+    } else {
+      res.status(200).send(body);
+    }
+  });
+});
 
 // app.get('/',
 // function(req, res) {
