@@ -7,25 +7,33 @@
     </ul>
   </div> -->
 
+  <!--      DRAFT POSITION TRACKER        -->
+
+  <div><span>Round: {{ tracker.round }}, Player Picking: {{ tracker.playerPick }}</span></div>
 
 
-<!--    ALL DRAFTABLE PLAYERS VIEW      -->
+  <!--      DRAFTED PLAYERS TRACKER       -->
 
-    <h3>Draftable Players</h3>
+  <div><span>{{ draftedPlayer }}</span></div>
 
-    <div class='search'>
-      <form>
-        <input type="text" name="query" ng-model="search">
-      </form>
-    </div>
 
-    <table class='all-player-list'>
-      <tr class='players-entry' ng-repeat='player in data.players'>
-        <td class='name'><span>{{ player.fname }} {{ player.lname }}</span></td>
-        <td class='position'>{{ player.position }}</td>
-        <td class='team'>{{ player.team }}</td>
-      </tr>
-    </table>
+  <!--    ALL DRAFTABLE PLAYERS VIEW      -->
+
+  <h3>Draftable Players</h3>
+
+  <div class='search'>
+    <form>
+      <input type="text" name="query" ng-model="search">
+    </form>
+  </div>
+
+  <table class='all-player-list'>
+    <tr class='players-entry' ng-repeat='player in availablePlayers.players' ng-click='draftPlayer($index)'>
+      <td class='name'><span>{{ player.fname }} {{ player.lname }}</span></td>
+      <td class='position'>{{ player.position }}</td>
+      <td class='team'>{{ player.team }}</td>
+    </tr>
+  </table>
 
 
 
