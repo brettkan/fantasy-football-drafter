@@ -29,11 +29,12 @@ angular.module('FFDrafter.draftRoom', [])
 
   $scope.addToDrafted = function(index) {
     var current = $scope.availablePlayers.players[index];
-    var currentRound = $scope.tracker.round;
+    var currentRound = $scope.tracker.round - 1;
     var currentPlayer = $scope.tracker.playerPick - 1;
 
     if (!$scope.draftedPlayers[currentRound]) {
-      $scope.draftedPlayers[currentRound] = [];
+      // For some reason Angular needs at least an empty object or ng-repeat does not work
+      $scope.draftedPlayers[currentRound] = [{},{},{},{},{},{},{},{},{},{},{},{}];
     }
 
     $scope.draftedPlayers[currentRound][currentPlayer] = current;

@@ -14,7 +14,16 @@
 
   <!--      DRAFTED PLAYERS TRACKER       -->
 
-  <div><span>{{ draftedPlayer }}</span></div>
+  <table class='drafted-players-list'>
+    <tr class='round-entry' ng-repeat='round in draftedPlayers'>
+      <td class='drafted-player-entry' ng-repeat='dplayer in round'>
+        <div>{{ dplayer.fname }}</div>
+        <div>{{ dplayer.lname }}</div>
+        <div>{{ dplayer.position }}</div>
+        <div>{{ dplayer.team }}</div>
+      </td>
+    </tr>
+  </table>
 
 
   <!--    ALL DRAFTABLE PLAYERS VIEW      -->
@@ -27,8 +36,8 @@
     </form>
   </div>
 
-  <table class='all-player-list'>
-    <tr class='players-entry' ng-repeat='player in availablePlayers.players' ng-click='draftPlayer($index)'>
+  <table class='available-players-list'>
+    <tr class='avaiable-player-entry' ng-repeat='player in availablePlayers.players' ng-click='draftPlayer($index)'>
       <td class='name'><span>{{ player.fname }} {{ player.lname }}</span></td>
       <td class='position'>{{ player.position }}</td>
       <td class='team'>{{ player.team }}</td>
