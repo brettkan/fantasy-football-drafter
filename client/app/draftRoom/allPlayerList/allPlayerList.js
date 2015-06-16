@@ -6,7 +6,7 @@ angular.module('FFDrafter.allPlayerList', [])
 
   $scope.addPlayers = function(playerObj){
     Players.getPlayerList().then(function(data) {
-      playerObj = data;
+      playerObj.players = data;
     });
   };
 

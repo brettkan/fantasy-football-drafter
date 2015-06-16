@@ -7,17 +7,29 @@
     </ul>
   </div> -->
 
-  <div ui-view='draftBoard'></div>
-  <div ui-view='allPlayerList'></div>
+    <h3>Draftable Players</h3>
+
+  <!--   <div class='search'>
+      <form>
+        <input type="text" name="query" ng-model="search">
+      </form>
+    </div> -->
+
+    <div class='all-players' ng-repeat='player in data.players'>
+      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+      <div class='title'>{{ link.title }}</div>
+      <div class='original'>{{ link.url }}</div>
+      <a href='/{{link.code}}'>{{ link.base_url }}/{{ link.code }}</a>
+    </div>  
 
 
-  <form name="myForm">
+<!--   <form name="myForm">
       <input class='text' type='url' name='input' ng-model='targetUrl' required>
       <input type='submit' value='Shorten' ng-click='addLink(targetUrl)' ui-sref="shorten.showlink">
       <div role='alert'>
         <span class="error" ng-show="myForm.input.$error.required"> Required! </span>
         <span class="error" ng-show="myForm.input.$error.url"> Not URL </span>
       </div>
-  </form>
+  </form> -->
 
 
