@@ -35,7 +35,7 @@ app.use(express.static(__dirname + '/client'));
 
 
 app.get('/getPlayers', function(req, res) {
-  request('http://www.fantasyfootballnerd.com/service/players/json/' + env.keys.FFNerd + '/QB/', function(err, APIResp, body) {
+  request('http://www.fantasyfootballnerd.com/service/draft-rankings/json/test/1/', function(err, APIResp, body) {
     if (err) { 
       console.log('Error with API request: ', err); 
       res.send(400);

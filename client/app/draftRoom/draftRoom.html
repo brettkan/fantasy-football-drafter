@@ -7,20 +7,27 @@
     </ul>
   </div> -->
 
+
+
+<!--    ALL DRAFTABLE PLAYERS VIEW      -->
+
     <h3>Draftable Players</h3>
 
-  <!--   <div class='search'>
+    <div class='search'>
       <form>
         <input type="text" name="query" ng-model="search">
       </form>
-    </div> -->
+    </div>
 
-    <div class='all-players' ng-repeat='player in data.players'>
-      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
-      <div class='title'>{{ link.title }}</div>
-      <div class='original'>{{ link.url }}</div>
-      <a href='/{{link.code}}'>{{ link.base_url }}/{{ link.code }}</a>
-    </div>  
+    <table class='all-player-list'>
+      <tr class='players-entry' ng-repeat='player in data.players'>
+        <td class='name'><span>{{ player.fname }} {{ player.lname }}</span></td>
+        <td class='position'>{{ player.position }}</td>
+        <td class='team'>{{ player.team }}</td>
+      </tr>
+    </table>
+
+
 
 
 <!--   <form name="myForm">

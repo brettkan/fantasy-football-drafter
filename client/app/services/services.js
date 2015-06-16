@@ -7,8 +7,8 @@ angular.module('FFDrafter.services', [])
       url: '/getPlayers'
     })
     .then(function(resp) {
-      console.log(resp.data);
-      return resp.data;
+      console.log(resp.data.DraftRankings);
+      return resp.data.DraftRankings;  // resp.data: {PPR: 1, DraftRankings: [...] }
     });
   };
 
